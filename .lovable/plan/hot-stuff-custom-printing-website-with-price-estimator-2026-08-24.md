@@ -4,13 +4,19 @@ Build the site your Claude conversation specced out, on this React/TanStack stac
 
 ## The site
 
-Single page, mobile-first, "Industrial" style (charcoal + red #C6282C, condensed uppercase headings, square corners) — the direction you picked. Logo sits in a dark bar so its near-white "CUSTOM PRINTING" line stays visible.
+Single page, mobile-first, "Industrial" style (charcoal + red #C6282C, condensed uppercase headings, square corners) — the direction you picked. Wordmark sits in a dark bar; your logo PNG drops in there once you send it.
 
 Sections in order:
 
-1. **Hero** — Hot Stuff Custom Printing, Ottawa, DTF custom apparel, 6 business day turnaround, button to the estimator.
-2. **Client strip** — MYO Camp, The Floor Company, The Vault Barbershop, Nepean Bulldogs, Certy Jerky.
-3. **Past work gallery** — your uploaded photos, minus the hi-vis floor company shot and the second crew member shirt. Captions name the client. The Certy Jerky piece is labelled "design mockup".
+1. **Hero** — Hot Stuff Custom Printing, Ottawa, DTF custom apparel, 6 business day turnaround, button to the estimator. Type-led, using the heat press photo as the backing image.
+2. **Client strip** — The Floor Company, The Vault Barbershop, Nepean Bulldogs, MYO Camp, Gainables.
+3. **Past work gallery** — the 6 photos you uploaded, all real garments, each captioned with the client and print type:
+   - Carhartt duffel, The Floor Company left-chest logo
+   - Black tee, TFC red and white left-chest print
+   - Grey barber cape, The Vault Barbershop back crest
+   - Heat press at 305°F / 30s pressing a Gainables tee
+   - Black hoodie, Nepean Bulldogs crest with personalised player name
+   - Grey tee, The Floor Company chest logo with the printed HotStuff neck label
 4. **Price estimator** — the centrepiece (below).
 5. **How it works** — 4 steps: send artwork → approve quote → we source and press → pick up in Ottawa. Includes file requirements (300 DPI PNG, transparent background, real dimensions).
 6. **FAQ** — turnaround, artwork requirements, wash and care, deposit on larger orders, no refunds on printed custom work, no licensed/copyrighted logos, yes to bags/capes/workwear by conversation.
@@ -41,21 +47,21 @@ All numbers live in one editable file so you can update them yourself when blank
 
 Per order: `(landed blanks + print cost + labour) × markup`
 
-- **Blanks** (landed, +5-6% cushion for 2XL and colour variance): ATC1000 $2.99, Gildan 5000 $3.48, Gildan 2400 long sleeve $9.75, Gildan 18500 hoodie $13.49. Customer-supplied garments = $0.
+- **Blanks** (landed, +5-6% cushion for 2XL and colour variance): ATC1000 $2.99, Gildan 5000 $3.48, Gildan 2400 long sleeve $9.75, Gildan 18500 hoodie $13.49. Customer-supplied garments = $0. Matches the four blanks.ca screenshots you sent.
 - **Shipping**: $30 added when the blanks subtotal is under $299, $0 above it. 13% HST on blanks.
 - **Prints** (gang sheet at $7.50 per 12 in of 22.5 in width, +8% for gutters): full front or back $2.00, custom name $0.68, left chest $0.20, sleeve $0.40.
 - **Labour** at $23.50/hr: setup minutes = 25 + 9 × √qty; plus 2 min per repeat placement, 6 min per personalised placement, 1 min per garment handling.
 - **Markup** slides continuously from 1.50 at small quantities to ~1.32 at 100+ (no tier cliffs).
 - **Output range** = markup low to markup +12%, widened further when design help is needed.
 
-Validation targets from your real jobs: MYO 1 (42 mixed, 42 fronts + 29 names) ≈ $950; MYO 2 (55 ATC1000, fronts) ≈ $600-626; 25 hoodies front+back ≈ $847; 1 tee is out of scope under the 5-piece minimum.
+Validation targets from your real jobs: MYO 1 (42 mixed, 42 fronts + 29 names) ≈ $950; MYO 2 (55 ATC1000, fronts) ≈ $600-626; 25 hoodies front+back ≈ $847.
 
 Head metadata, alt text on every gallery image, and semantic structure included for search.
 
-## What I need from you
+## Still to send
 
-- The logo and the gallery photos (upload them and I'll wire them in).
-- A wide, high-res shot of a finished batch if you have one, for the hero.
+- **Your logo PNG** — it didn't come through with the photos. The header uses a styled wordmark until then, and the logo drops straight in when you upload it.
+- Optional: a wide, high-res shot of a finished batch for a stronger hero.
 
 ## Not in this build
 
