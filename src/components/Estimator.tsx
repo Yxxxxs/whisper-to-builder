@@ -61,7 +61,7 @@ function PlacementDiagram({ placement }: { placement: PlacementKey }) {
       strokeWidth={2}
     />
   );
-  const marks: Record<PlacementKey, JSX.Element> = {
+  const marks: Record<PlacementKey, React.ReactElement> = {
     fullFront: <rect x={28} y={22} width={16} height={20} className="fill-primary" />,
     fullBack: <rect x={28} y={20} width={16} height={22} className="fill-primary" opacity={0.55} />,
     leftChest: <rect x={40} y={20} width={7} height={6} className="fill-primary" />,
