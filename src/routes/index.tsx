@@ -10,7 +10,8 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { PRICING } from "@/lib/pricing";
-import bagFloorCo from "@/assets/sample1.webp.asset.json";
+import duffelVideo from "@/assets/duffel.mp4.asset.json";
+import duffelPoster from "@/assets/duffel-poster.jpg.asset.json";
 import teeTfc from "@/assets/Sample2.webp.asset.json";
 import capeVault from "@/assets/Sample3.webp.asset.json";
 import pressGainables from "@/assets/Sample4.webp.asset.json";
