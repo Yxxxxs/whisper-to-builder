@@ -44,12 +44,21 @@ const CLIENTS = [
   "Fitness brands",
 ];
 
-const GALLERY = [
+const GALLERY: {
+  src: string;
+  video?: boolean;
+  poster?: string;
+  client: string;
+  caption: string;
+  alt: string;
+}[] = [
   {
-    src: bagFloorCo.url,
+    src: duffelVideo.url,
+    video: true,
+    poster: duffelPoster.url,
     client: "The Floor Company",
     caption: "Carhartt duffel, logo print",
-    alt: "Black Carhartt duffel bag with The Floor Company logo printed in white and red",
+    alt: "Video of a black Carhartt duffel bag printed with The Floor Company logo",
   },
   {
     src: teeTfc.url,
