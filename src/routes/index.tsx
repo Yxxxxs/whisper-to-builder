@@ -36,11 +36,11 @@ export const Route = createFileRoute("/")({
 });
 
 const CLIENTS = [
-  "The Floor Company",
-  "The Vault Barbershop",
-  "Nepean Bulldogs",
-  "MYO Camp",
-  "Gainables",
+  "Construction wear",
+  "Barbershops",
+  "Sports teams",
+  "Summer camps",
+  "Fitness brands",
 ];
 
 const GALLERY = [
@@ -86,7 +86,7 @@ const STEPS = [
   {
     n: "01",
     title: "Send your artwork",
-    body: "Email or DM us the file with your garment, quantity and where the print goes.",
+    body: "Email or DM us your artwork with your garment, quantity, size and where the print goes.",
   },
   {
     n: "02",
@@ -109,10 +109,6 @@ const FAQ = [
   {
     q: "How long does an order take?",
     a: `${PRICING.turnaroundBusinessDays} business days from the moment artwork is approved. Rush jobs are sometimes possible — ask.`,
-  },
-  {
-    q: "What kind of file do you need?",
-    a: "A 300 DPI PNG with a transparent background, sized to the real dimensions you want printed. Vector (AI, SVG, PDF) is even better. Screenshots and low-res logos pulled off a website will look rough — we'll tell you before we print.",
   },
   {
     q: "How do I wash printed garments?",
@@ -264,12 +260,12 @@ function Index() {
           ))}
         </div>
         <div className="mt-6 border-l-2 border-primary bg-secondary p-5">
-          <h3 className="text-lg">Artwork requirements</h3>
+          <h3 className="text-lg">What I need from you</h3>
           <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-            <li>300 DPI PNG with a transparent background, or vector (AI, SVG, PDF)</li>
-            <li>Sized to the real print dimensions you want on the garment</li>
-            <li>Tell us the placement — full front, full back, left chest or sleeve</li>
-            <li>For names and numbers, send a list matching each garment</li>
+            <li>Your artwork — I can print virtually any picture or logo you send</li>
+            <li>The size you want it printed</li>
+            <li>Where it goes — full front, full back, left chest, sleeve, etc.</li>
+            <li>Any add-ons like names, numbers, or special placements</li>
           </ul>
         </div>
       </section>
