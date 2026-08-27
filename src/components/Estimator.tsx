@@ -39,7 +39,7 @@ const PLACEMENTS: { key: PlacementKey; title: string; blurb: string }[] = [
 ];
 
 const ARTWORK: { key: ArtworkKey; title: string; blurb: string }[] = [
-  { key: "ready", title: "I have a print-ready file", blurb: "300 DPI PNG, transparent background" },
+  { key: "ready", title: "I have artwork ready", blurb: "Clean image or logo, good to print" },
   { key: "cleanup", title: "I have something rough", blurb: "Needs cleaning up before printing" },
   { key: "needed", title: "I need a design made", blurb: "We'll work it out from your idea" },
 ];
