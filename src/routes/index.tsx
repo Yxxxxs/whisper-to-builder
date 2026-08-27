@@ -10,7 +10,8 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { PRICING } from "@/lib/pricing";
-import bagFloorCo from "@/assets/sample1.webp.asset.json";
+import duffelVideo from "@/assets/duffel.mp4.asset.json";
+import duffelPoster from "@/assets/duffel-poster.jpg.asset.json";
 import teeTfc from "@/assets/Sample2.webp.asset.json";
 import capeVault from "@/assets/Sample3.webp.asset.json";
 import pressGainables from "@/assets/Sample4.webp.asset.json";
@@ -43,12 +44,21 @@ const CLIENTS = [
   "Fitness brands",
 ];
 
-const GALLERY = [
+const GALLERY: {
+  src: string;
+  video?: boolean;
+  poster?: string;
+  client: string;
+  caption: string;
+  alt: string;
+}[] = [
   {
-    src: bagFloorCo.url,
+    src: duffelVideo.url,
+    video: true,
+    poster: duffelPoster.url,
     client: "The Floor Company",
     caption: "Carhartt duffel, logo print",
-    alt: "Black Carhartt duffel bag with The Floor Company logo printed in white and red",
+    alt: "Video of a black Carhartt duffel bag printed with The Floor Company logo",
   },
   {
     src: teeTfc.url,
@@ -219,12 +229,26 @@ function Index() {
           {GALLERY.map((item) => (
             <figure key={item.src} className="group border border-border bg-card">
               <div className="aspect-square overflow-hidden bg-secondary">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {item.video ? (
+                  <video
+                    src={item.src}
+                    poster={item.poster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={item.alt}
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
               </div>
               <figcaption className="border-t border-border px-4 py-3">
                 <span className="block font-display text-lg uppercase leading-tight">
