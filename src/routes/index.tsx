@@ -229,12 +229,26 @@ function Index() {
           {GALLERY.map((item) => (
             <figure key={item.src} className="group border border-border bg-card">
               <div className="aspect-square overflow-hidden bg-secondary">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {item.video ? (
+                  <video
+                    src={item.src}
+                    poster={item.poster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={item.alt}
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
               </div>
               <figcaption className="border-t border-border px-4 py-3">
                 <span className="block font-display text-lg uppercase leading-tight">
