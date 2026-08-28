@@ -148,9 +148,9 @@ function Index() {
       <Toaster />
 
       <header className="sticky top-0 z-40 border-b border-line-dark bg-ink text-ink-foreground">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
-          <a href="#top" className="flex items-baseline gap-2">
-            <span className="font-display text-2xl uppercase leading-none tracking-tight">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:gap-4 sm:px-6">
+          <a href="#top" className="flex min-w-0 items-baseline gap-2">
+            <span className="font-display text-xl uppercase leading-none tracking-tight sm:text-2xl">
               Hot<span className="text-primary">Stuff</span>
             </span>
             <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-steel-foreground sm:inline">
@@ -171,7 +171,7 @@ function Index() {
               Contact
             </a>
           </nav>
-          <Button asChild size="sm" className="ml-auto sm:ml-0">
+          <Button asChild size="sm" className="shrink-0">
             <a href="#estimator">Get a price</a>
           </Button>
         </div>
@@ -186,9 +186,9 @@ function Index() {
           className="absolute inset-0 size-full object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/40" />
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-28">
           <p className="eyebrow text-primary">Ottawa, Ontario</p>
-          <h1 className="mt-4 max-w-3xl text-5xl leading-[0.95] sm:text-7xl">
+          <h1 className="mt-4 max-w-3xl text-[2.6rem] leading-[0.95] sm:text-6xl lg:text-7xl">
             Custom apparel printing,
             <br />
             <span className="text-primary">pressed by hand</span> in Ottawa
@@ -198,7 +198,7 @@ function Index() {
             names and numbers. Minimum {PRICING.minimumQuantity} pieces, ready in{" "}
             {PRICING.turnaroundBusinessDays} business days from artwork approval.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild size="lg">
               <a href="#estimator">Estimate my order</a>
             </Button>
@@ -208,6 +208,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
       {/* CLIENT STRIP */}
       <section aria-label="Clients" className="border-b border-border bg-bone">
