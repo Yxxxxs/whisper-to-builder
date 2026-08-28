@@ -23,8 +23,8 @@ const GARMENTS: {
   title: string;
   blurb: string;
 }[] = [
-  { key: "budgetTee", title: "T-shirt — budget", blurb: "Thinner and softer. Cheapest per piece." },
-  { key: "standardTee", title: "T-shirt — standard", blurb: "Thicker, heavier, more durable." },
+  { key: "budgetTee", title: "T-shirt — soft and thin", blurb: "Lighter, softer feel." },
+  { key: "standardTee", title: "T-shirt — heavier and more durable", blurb: "Thicker cotton, stands up to more washes." },
   { key: "longSleeve", title: "Long sleeve tee", blurb: "Cotton long sleeve, same print options." },
   { key: "hoodie", title: "Hoodie", blurb: "Heavyweight pullover hoodie." },
   { key: "own", title: "I have my own garments", blurb: "Print only. You supply the blanks." },
@@ -468,19 +468,6 @@ export function Estimator() {
                   {moneyPrecise(estimate.perPieceLow)} – {moneyPrecise(estimate.perPieceHigh)} per
                   piece
                 </p>
-                <ul className="mt-5 space-y-2 border-t border-line-dark pt-4 text-sm">
-                  {estimate.lines.map((line) => (
-                    <li key={line.label} className="flex justify-between gap-3">
-                      <span>
-                        <span className="block">{line.label}</span>
-                        <span className="block text-xs text-steel-foreground">{line.detail}</span>
-                      </span>
-                      <span className="font-mono text-xs whitespace-nowrap pt-0.5">
-                        {line.amount > 0 ? money(line.amount) : "included"}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
                 <p className="mt-4 border-t border-line-dark pt-4 text-xs text-steel-foreground">
                   {PRICING.turnaroundBusinessDays} business days from artwork approval. Final price
                   confirmed once we see the artwork. 2XL and up is slightly higher.

@@ -13,8 +13,8 @@
 export const PRICING = {
   /** Landed blank cost per piece, before tax/shipping (blanks.ca / jiffy list price). */
   garments: {
-    budgetTee: { label: "T-shirt — budget", sku: "ATC1000", cost: 2.99 },
-    standardTee: { label: "T-shirt — standard", sku: "Gildan 5000", cost: 3.48 },
+    budgetTee: { label: "T-shirt — soft and thin", sku: "ATC1000", cost: 2.99 },
+    standardTee: { label: "T-shirt — heavier and more durable", sku: "Gildan 5000", cost: 3.48 },
     longSleeve: { label: "Long sleeve tee", sku: "Gildan 2400", cost: 9.75 },
     hoodie: { label: "Hoodie", sku: "Gildan 18500", cost: 13.49 },
     own: { label: "Your own garments", sku: "customer supplied", cost: 0 },
