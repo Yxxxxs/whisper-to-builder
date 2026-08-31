@@ -1,29 +1,49 @@
-# Video tile + mobile/laptop polish
+# Instagram post — template-style layout, Hot Stuff branding
 
-## 1. Swap the Carhartt duffel photo for your video
+A new square (1080x1080) Instagram image that copies the *layout* of the uploaded flyer template, but with Hot Stuff's industrial charcoal + press-red palette and real business info. Saved to the generated-files area, presented in chat with a caption.
 
-The first gallery tile (The Floor Company duffel bag) becomes a looping video tile.
+## Layout (mirrors the reference)
 
-- You upload the video file in chat; it gets hosted on the CDN like the photos, so the repo stays light.
-- Plays automatically, muted, on loop, no controls — reads like a moving photo in the grid.
-- Same square frame, same caption bar ("The Floor Company / Carhartt duffel, logo print") so the grid stays even.
-- Respects phone data and battery: `playsinline` so iPhones don't force fullscreen, `preload="metadata"`, and a still poster frame shown until the video is ready.
-- If a browser blocks autoplay, the poster frame stays visible — the tile never looks broken.
+```text
++--------------------------------------------------+
+|  [logo mark]  HOT STUFF                 /////     |
+|               CUSTOM PRINTING          /  ANGLED  |
+|                                       /   PHOTO   |
+|  Custom apparel                       \   PANEL   |
+|  PRESSED IN OTTAWA                     \  (right) |
+|  ____                                   \////     |
+|                                                   |
+|  "Instant price estimate — no waiting"            |
+|                                                   |
+|  > Know your price in seconds                     |
+|  short body copy about the new site + calculator  |
+|                                                   |
+|  [icon] Get a quote                               |
+|         hotstuffprints.ca                         |
++--------------------------------------------------+
+```
 
-## 2. Mobile + laptop pass
+- Left two-thirds: off-white/bone panel with text.
+- Right third: angled chevron photo panel, framed by press-red chevron accents (replacing the template's cyan).
+- Headline: "Custom apparel" in script/light, "PRESSED IN OTTAWA" in heavy condensed red.
 
-Review every section at phone width and at laptop width, and fix what breaks:
+## Content
 
-- **Header**: keep the wordmark and the "Get a price" button on one line on small screens; nav links stay hidden on phone as they are now.
-- **Hero**: headline sizing so it doesn't overflow on a 375px screen; buttons stack full-width on phone.
-- **Gallery**: one column on phone, two on tablet, three on laptop (already close — verify the video tile behaves the same).
-- **Estimator**: this is the piece with the most controls. Check the option cards, quantity input, placement pickers and the live price panel at phone width; the price summary should sit under the form on phone and beside it on laptop, and stay readable without horizontal scrolling.
-- **FAQ / How it works / Footer**: tap targets at least 44px, no cramped text, contact links easy to hit with a thumb.
+- Brand block: HOT STUFF / CUSTOM PRINTING
+- Sub-quote: instant price estimate, no back-and-forth
+- Body: new website is live with a built-in price calculator — pick garment, quantity and placement, see a real price range instantly. Tees, hoodies, workwear, team gear. Minimum 5 pieces, 6 business day turnaround.
+- Footer CTA: hotstuffprints.ca
 
-No content or pricing changes — layout and the one media swap only.
+## Photo panel
+
+Generated graphic in the same spirit as the first post's "Estimate my order" visual — a stylised calculator/estimate UI card on a dark industrial background with red accents — composited into the angled panel rather than a lifestyle photo.
+
+## Colours
+
+Charcoal `#2B2B2E` ink, bone `#F4F2EE` panel, press red `#C6282C` accents. No cyan anywhere.
 
 ## Technical notes
 
-- Video uploaded via `lovable-assets`, referenced through a `.asset.json` pointer in `src/routes/index.tsx`, same as the current images.
-- Gallery items get an optional `type: "video"` field so the grid renders `<video>` or `<img>` per tile without duplicating markup.
-- Responsive work is Tailwind breakpoint adjustments in `src/routes/index.tsx` and `src/components/Estimator.tsx`; verified with real 390px and 1440px browser screenshots before I call it done.
+- Image generated at premium quality (text legibility matters) at 1080x1080, written to the generated-files area as `hotstuff-instagram-post-v2.png`.
+- No changes to the website codebase — this is a marketing asset only.
+- A matching caption is written in chat alongside the image.
