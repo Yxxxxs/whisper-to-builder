@@ -10,13 +10,13 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { PRICING } from "@/lib/pricing";
-import duffelVideo from "@/assets/duffel.mp4.asset.json";
-import duffelPoster from "@/assets/duffel-poster.jpg.asset.json";
-import teeTfc from "@/assets/Sample2.webp.asset.json";
-import capeVault from "@/assets/Sample3.webp.asset.json";
-import pressGainables from "@/assets/Sample4.webp.asset.json";
-import hoodieBulldogs from "@/assets/Sample5.webp.asset.json";
-import teeFloorCo from "@/assets/Sample6.webp.asset.json";
+import heroPress from "@/assets/Sample4.webp.asset.json";
+import bagFloorCo from "@/assets/work-01-floor-company-bag.webp";
+import teeMukole from "@/assets/work-02-chez-mutshimunyi-tee.webp";
+import shirtVault from "@/assets/work-03-vault-barber-shirt.webp";
+import pressGainables from "@/assets/work-04-heat-press-gainables.webp";
+import hoodieBulldogs from "@/assets/work-05-nepean-bulldogs-hoodie.webp";
+import teeFloorCo from "@/assets/work-06-floor-company-grey-tee.webp";
 
 const TITLE = "Hot Stuff Custom Printing | Custom T-Shirt Printing in Ottawa";
 const DESCRIPTION =
@@ -53,39 +53,37 @@ const GALLERY: {
   alt: string;
 }[] = [
   {
-    src: duffelVideo.url,
-    video: true,
-    poster: duffelPoster.url,
+    src: bagFloorCo,
     client: "The Floor Company",
-    caption: "Carhartt duffel, logo print",
-    alt: "Video of a black Carhartt duffel bag printed with The Floor Company logo",
+    caption: "Carhartt bag, logo print",
+    alt: "Black Carhartt bag printed with The Floor Company logo",
   },
   {
-    src: teeTfc.url,
-    client: "The Floor Company",
-    caption: "Left chest, two-colour",
-    alt: "Close-up of a black t-shirt with a red and white TFC left chest print",
+    src: teeMukole,
+    client: "Chez Mutshimunyi",
+    caption: "Front left chest, full back",
+    alt: "Front and back of a black t-shirt with a gold Mukole Chez Mutshimunyi left chest logo and a full back crest print",
   },
   {
-    src: capeVault.url,
+    src: shirtVault,
     client: "The Vault Barbershop",
-    caption: "Barber cape, back crest",
-    alt: "Grey barber cape printed with The Vault Barbershop crest logo",
+    caption: "Barber shirt, chest + back crest",
+    alt: "Front and back of a grey barber shirt printed with The Vault Barbershop crest logo",
   },
   {
-    src: pressGainables.url,
+    src: pressGainables,
     client: "Gainables",
     caption: "Pressed at 305°F",
     alt: "Heat press set to 305 degrees closing over a black garment with large white lettering",
   },
   {
-    src: hoodieBulldogs.url,
+    src: hoodieBulldogs,
     client: "Nepean Bulldogs",
     caption: "Team crest + player name",
     alt: "Black hoodie with a Nepean Bulldogs hockey crest and a personalised player name print",
   },
   {
-    src: teeFloorCo.url,
+    src: teeFloorCo,
     client: "The Floor Company",
     caption: "Chest logo, printed neck label",
     alt: "Grey t-shirt with The Floor Company chest logo and a custom Hot Stuff printed neck label",
@@ -180,7 +178,7 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative overflow-hidden bg-ink text-ink-foreground">
         <img
-          src={pressGainables.url}
+          src={heroPress.url}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 size-full object-cover opacity-25"
@@ -229,7 +227,7 @@ function Index() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {GALLERY.map((item) => (
             <figure key={item.src} className="group border border-border bg-card">
-              <div className="aspect-square overflow-hidden bg-secondary">
+              <div className="aspect-[4/5] overflow-hidden bg-secondary">
                 {item.video ? (
                   <video
                     src={item.src}
