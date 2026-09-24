@@ -18,7 +18,11 @@ export const PRICING = {
     longSleeve: { label: "Long sleeve tee", sku: "Gildan 2400", cost: 9.75 },
     hoodie: { label: "Hoodie", sku: "Gildan 18500", cost: 13.49 },
     own: { label: "Your own garments", sku: "customer supplied", cost: 0 },
+    specialty: { label: "Specialty garment", sku: "polyester, oversized or a specific brand", cost: 6.5 },
   },
+
+  /** Specialty blanks vary a lot in cost, so the quoted range opens up. */
+  specialtyWidening: { lowFactor: 0.85, highFactor: 1.35 },
 
   /** Cushion on blank cost to absorb 2XL+ and colour variance (sizes aren't asked in the flow). */
   sizeCushion: 1.055,
@@ -116,7 +120,7 @@ export function calculateEstimate(input: EstimateInput): Estimate {
   const blanksGoods = garment.cost * PRICING.sizeCushion * qty;
   const shipping =
     blanksGoods > 0 && blanksGoods < PRICING.freeShippingThreshold ? PRICING.shippingFee : 0;
-  const blanksLanded = blanksGoods * (1 + PRICING.taxRate) + shipping;
+  const blanksLanded = (blanksGoods + shipping) * (1 + PRICING.taxRate);
 
   // --- Prints ---
   const repeatPlacementCost = input.placements.reduce(
@@ -137,8 +141,13 @@ export function calculateEstimate(input: EstimateInput): Estimate {
   const markup = markupFor(qty);
   const design = PRICING.designWidening[input.artwork];
 
-  const low = cost * markup * design.lowFactor;
-  const high = cost * markup * PRICING.rangeSpread * design.highFactor;
+  const specialty =
+    input.garment === "specialty"
+      ? PRICING.specialtyWidening
+      : { lowFactor: 1, highFactor: 1 };
+
+  const low = cost * markup * design.lowFactor * specialty.lowFactor;
+  const high = cost * markup * PRICING.rangeSpread * design.highFactor * specialty.highFactor;
 
   // --- Customer-facing spec lines: margin already baked into every line ---
   const lines: SpecLine[] = [];

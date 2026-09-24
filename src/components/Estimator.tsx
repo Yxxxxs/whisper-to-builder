@@ -28,7 +28,8 @@ const GARMENTS: {
   { key: "longSleeve", title: "Long sleeve tee", blurb: "Cotton long sleeve, same print options." },
   { key: "hoodie", title: "Hoodie", blurb: "Heavyweight pullover hoodie." },
   { key: "own", title: "I have my own garments", blurb: "Print only. You supply the blanks." },
-  { key: "other", title: "Something else", blurb: "Bags, hats, barber capes, workwear." },
+  { key: "specialty", title: "A different shirt", blurb: "Polyester, oversized, or a specific brand." },
+  { key: "other", title: "Not clothing", blurb: "Bags, hats, barber capes, banners." },
 ];
 
 const PLACEMENTS: { key: PlacementKey; title: string; blurb: string }[] = [
@@ -204,7 +205,8 @@ export function Estimator() {
       return;
     }
     setSent(true);
-    toast.success("Got it — we'll come back with a confirmed price.");
+    toast.success("Got it — opening WhatsApp so you can send it straight over.");
+    window.open(`https://wa.me/16132526457?text=${whatsappText}`, "_blank", "noopener");
   }
 
   const whatsappText = encodeURIComponent(
