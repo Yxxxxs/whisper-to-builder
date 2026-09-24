@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { PRICING } from "@/lib/pricing";
+import duffelVideo from "@/assets/media/duffel.mp4";
+import duffelPoster from "@/assets/media/duffel-poster.webp";
+import heroPress from "@/assets/media/press-gainables.webp";
 import bagFloorCo from "@/assets/work-01-floor-company-bag.webp";
 import teeMukole from "@/assets/work-02-chez-mutshimunyi-tee.webp";
 import shirtVault from "@/assets/work-03-vault-barber-shirt.webp";
@@ -45,8 +48,6 @@ const CLIENTS = [
 
 const GALLERY: {
   src: string;
-  video?: boolean;
-  poster?: string;
   client: string;
   caption: string;
   alt: string;
@@ -177,7 +178,7 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative overflow-hidden bg-ink text-ink-foreground">
         <img
-          src={pressGainables}
+          src={heroPress}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 size-full object-cover opacity-25"
@@ -227,26 +228,12 @@ function Index() {
           {GALLERY.map((item) => (
             <figure key={item.src} className="group border border-border bg-card">
               <div className="aspect-[4/5] overflow-hidden bg-secondary">
-                {item.video ? (
-                  <video
-                    src={item.src}
-                    poster={item.poster}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    aria-label={item.alt}
-                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    loading="lazy"
-                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                )}
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
               <figcaption className="border-t border-border px-4 py-3">
                 <span className="block font-display text-lg uppercase leading-tight">
@@ -258,6 +245,31 @@ function Index() {
               </figcaption>
             </figure>
           ))}
+        </div>
+      </section>
+
+      {/* IN THE SHOP */}
+      <section aria-label="In the shop" className="bg-ink text-ink-foreground">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2">
+          <div>
+            <p className="eyebrow text-primary">In the shop</p>
+            <h2 className="mt-2 text-3xl sm:text-4xl">Pressed and checked by hand</h2>
+            <p className="mt-4 max-w-md text-steel-foreground">
+              Every piece goes through the same press at the same settings, then gets checked before
+              it is folded. That consistency is the whole job.
+            </p>
+          </div>
+          <video
+            src={duffelVideo}
+            poster={duffelPoster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="A black Carhartt duffel bag printed with The Floor Company logo"
+            className="w-full border border-line-dark object-cover"
+          />
         </div>
       </section>
 
@@ -282,9 +294,9 @@ function Index() {
           ))}
         </div>
         <div className="mt-6 border-l-2 border-primary bg-secondary p-5">
-          <h3 className="text-lg">What I need from you</h3>
+          <h3 className="text-lg">What we need from you</h3>
           <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-            <li>Your artwork — I can print virtually any picture or logo you send</li>
+            <li>Your artwork — we can print virtually any picture or logo you send</li>
             <li>The size you want it printed</li>
             <li>Where it goes — full front, full back, left chest, sleeve, etc.</li>
             <li>Any add-ons like names, numbers, or special placements</li>
