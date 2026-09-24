@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { PRICING } from "@/lib/pricing";
-import heroPress from "@/assets/Sample4.webp.asset.json";
 import bagFloorCo from "@/assets/work-01-floor-company-bag.webp";
 import teeMukole from "@/assets/work-02-chez-mutshimunyi-tee.webp";
 import shirtVault from "@/assets/work-03-vault-barber-shirt.webp";
@@ -178,7 +177,7 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative overflow-hidden bg-ink text-ink-foreground">
         <img
-          src={heroPress.url}
+          src={pressGainables}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 size-full object-cover opacity-25"
